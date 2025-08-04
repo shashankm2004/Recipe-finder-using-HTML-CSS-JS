@@ -13,7 +13,8 @@ body {
     justify-content: center;
     align-items: center;
     background-image:url(f1.jpeg);
-    background-size: 100% 105%;
+    background-size: cover;
+  background-position: center;
     background-repeat: repeat-y;
     background-attachment: fixed;
 }
@@ -101,9 +102,10 @@ body {
     background-attachment: fixed;
     /* background-size: 100% 75%;
     width: 70%; */
-    min-width: 1500px;
-    width: 75%; /* adjust the width to your liking */
-  margin: 400px auto; /* add margin top and bottom, and auto for left and right */
+    width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 2rem; /* add margin top and bottom, and auto for left and right */
   text-align: center; /* center the text inside */
   height: fit-content;
   background-repeat: no-repeat;
@@ -114,7 +116,7 @@ body {
   
 
 h1 {
-    font-size: 50px;
+    font-size: clamp(2rem, 6vw, 5rem);
     animation: textLaunch 1s ease-out;
     animation-delay: 1s;
     font-family: cursive;
@@ -281,5 +283,42 @@ color: var(--input-text-color);
       opacity: 1;
     }
   }
+@media (max-width: 768px) {
+  .main {
+    width: 95%;
+    margin: 40px auto;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .search-box, #filterSelect {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .search-box-icon {
+    right: 5px;
+    top: 2px;
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #results img {
+    height: 150px;
+  }
+}
+
 
   
